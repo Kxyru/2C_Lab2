@@ -1,0 +1,206 @@
+/* ==========================================================
+   Shared stylesheet - owned by the team leader.
+   Register and login pages should link this file and reuse
+   the classes below instead of writing their own base styles.
+   ========================================================== */
+
+   :root {
+    --ink: #1f2a44;
+    --ink-soft: #5a6478;
+    --paper: #f7f8fa;
+    --surface: #ffffff;
+    --line: #dde2ea;
+    --accent: #0e7c86;
+    --accent-dark: #0a5f67;
+    --error: #b3261e;
+    --radius: 10px;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--accent);
+  }
+  
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  
+  /* ---------- Layout ---------- */
+  .container {
+    width: min(1040px, 100% - 2rem);
+    margin-inline: auto;
+  }
+  
+  /* ---------- Header / nav ---------- */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+  }
+  
+  .brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .nav a:not(.btn) {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav a:not(.btn):hover {
+    color: var(--accent);
+  }
+  
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  
+  .btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+  }
+  
+  .btn-outline:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* ---------- Hero (index page) ---------- */
+  .hero {
+    padding-block: clamp(3rem, 10vw, 7rem);
+  }
+  
+  .hero h1 {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2.2rem, 6vw, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero p {
+    max-width: 55ch;
+    margin: 0 0 2rem;
+    color: var(--ink-soft);
+    font-size: 1.15rem;
+  }
+  
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding-block: 1.5rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  
+  /* ---------- Form pieces (for register.html and login.html) ---------- */
+  .form-card {
+    width: min(420px, 100% - 2rem);
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  
+  .form-card h1 {
+    margin-top: 0;
+    font-size: 1.6rem;
+  }
+  
+  .field {
+    margin-bottom: 1.1rem;
+  }
+  
+  .field label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+  
+  .field input {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font: inherit;
+  }
+  
+  .field input:focus {
+    border-color: var(--accent);
+  }
+  
+  .form-card .btn {
+    width: 100%;
+  }
+  
+  .form-error {
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  
+  .form-alt {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 480px) {
+    .site-header .container {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
